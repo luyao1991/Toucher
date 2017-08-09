@@ -4,6 +4,7 @@ import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.PixelFormat;
+import android.os.Handler;
 import android.os.IBinder;
 import android.os.SystemClock;
 import android.support.constraint.ConstraintLayout;
@@ -124,10 +125,10 @@ public class MainService extends Service {
     @Override
     public void onDestroy()
     {
-        super.onDestroy();
         if (imageButton1 != null)
         {
-            windowManager.removeView(imageButton1);
+            windowManager.removeView(toucherLayout);
         }
+        super.onDestroy();
     }
 }
